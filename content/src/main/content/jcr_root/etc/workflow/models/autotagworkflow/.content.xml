@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/default"
+        cq:lastModified="{Date}2016-02-24T11:19:37.957-05:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/libs/cq/workflow/templates/model"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="AutoTagWorkflow"
+        sling:resourceType="cq/workflow/components/pages/model">
+        <flow
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <process
+                jcr:created="{Date}2016-02-19T21:59:34.289-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-02-24T11:19:15.523-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Image Text Detection"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.razorfish.fluent.autotag.AutoTextWorkflowStep"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process>
+            <process_1184674755
+                jcr:created="{Date}2016-02-20T17:12:27.136-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-02-24T11:19:27.680-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Automatic label detection and tagging"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.razorfish.fluent.autotag.AutoLabelWorkflowStep"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_1184674755>
+            <process_619591098
+                jcr:created="{Date}2016-02-20T17:12:46.484-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-02-24T11:19:37.953-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Automatic Landmark detection and tagging"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.razorfish.fluent.autotag.AutoLandMarkWorkflowStep"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_619591098>
+        </flow>
+        <model/>
+        <end
+            jcr:lastModified="{Date}2016-02-22T18:10:02.374-05:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="cq/flow/components/step/end"/>
+    </jcr:content>
+</jcr:root>
