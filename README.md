@@ -1,4 +1,4 @@
-Auto Tag Project
+Adobe AEM auto tagging with Google Cloud Vision
 ========
 
 Sample project using [Google Cloud Vision API](https://cloud.google.com/vision/docs/)  to autotag assets within Adobe AEM DAM. 
