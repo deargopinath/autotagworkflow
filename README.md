@@ -1,12 +1,37 @@
 Auto Tag Project
 ========
 
-This a content package project generated using the multimodule-content-package-archetype.
+Sample project using [Google Cloud Vision API](https://cloud.google.com/vision/docs/)  to autotag assets within Adobe AEM DAM. 
+
+It contains a workflow with 3 process steps:
+- Auto Text -> Detect Text in an image, and assign the detected text to the description metadata field.
+- Auto Label -> Tag images with the labels detected by the Vision API
+- Auto Landmark -> Tag images with landmarks detected by the Vision API.
+
+The tags are created with namespace cloudvision. 
+![autotag result](screenshot1.png)
+
+
+Running
+--------
+To run the application, first setup the Cloud Vision API.
+* Create a project with the [Google Cloud Console][cloud-console], and enable
+  the [Vision API][vision-api].
+* Set up your environment with [Application Default Credentials][adc]. For
+    example, from the Cloud Console, you might create a service account,
+    download its json credentials file, then set the appropriate environment
+    variable:
+
+    ```bash
+    export GOOGLE_APPLICATION_CREDENTIALS=/path/to/your-project-credentials.json
+    ```
+    
+* Start your AEM instance in this environment
 
 Building
 --------
 
-This project uses Maven for building. Common commands:
+This a content package project generated using the multimodule-content-package-archetype. This project uses Maven for building. Common commands:
 
 From the root directory, run ``mvn -PautoInstallPackage clean install`` to build the bundle and content package and install to a CQ instance.
 
