@@ -28,7 +28,9 @@ To run the application, first setup the Cloud Vision API.
     export GOOGLE_APPLICATION_CREDENTIALS=/path/to/your-project-credentials.json
     ```
     
-* Start your AEM instance in this environment
+* Start your AEM instance in this environment.
+* Start the AutoTag workflow and select an asset.
+ | ![workflow start](screenshot2.png)
 
 Building
 --------
