@@ -9,15 +9,17 @@ It contains a workflow with 3 process steps:
 - Auto Landmark -> Tag images with landmarks detected by the Vision API.
 
 The tags are created with namespace cloudvision. 
+
+An example result using a Google test image can be seen in this screenshot:
 ![autotag result](screenshot1.png)
 
 
 Running
 --------
 To run the application, first setup the Cloud Vision API.
-* Create a project with the [Google Cloud Console][cloud-console], and enable
-  the [Vision API][vision-api].
-* Set up your environment with [Application Default Credentials][adc]. For
+* Create a project with the [Google Cloud Console](https://console.cloud.google.com), and enable
+  the [Vision API](https://console.cloud.google.com/apis/api/vision.googleapis.com/overview?project=_).
+* Set up your environment with [Application Default Credentials](https://cloud.google.com/docs/authentication#developer_workflow). For
     example, from the Cloud Console, you might create a service account,
     download its json credentials file, then set the appropriate environment
     variable:
