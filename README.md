@@ -1,6 +1,8 @@
-Adobe AEM auto tagging with Google Cloud Vision
+Adobe AEM auto tagging with Autotagging AEM Assets with Image Recognition APIs
 ========
 
+Google Cloud Vision
+------------------
 Sample project using [Google Cloud Vision API](https://cloud.google.com/vision/docs/)  to autotag assets within Adobe AEM DAM. 
 
 It contains a workflow with 3 process steps:
@@ -31,6 +33,7 @@ To run the application, first setup the Cloud Vision API.
 * Start your AEM instance in this environment.
 * Start the AutoTag workflow and select an asset.
   ![workflow start](screenshot2.png)
+
 
 Building
 --------
