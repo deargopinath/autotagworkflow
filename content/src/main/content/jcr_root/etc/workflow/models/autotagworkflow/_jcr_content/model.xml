@@ -7,7 +7,7 @@
     description="No Description"
     title="AutoTagWorkflow">
     <metaData
-        cq:lastModified="{Long}1456330780068"
+        cq:lastModified="{Long}1461080240321"
         cq:lastModifiedBy="admin"
         jcr:primaryType="nt:unstructured"/>
     <nodes jcr:primaryType="nt:unstructured">
@@ -23,7 +23,7 @@
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                PROCESS="com.razorfish.fluent.autotag.AutoTextWorkflowStep"
+                PROCESS="com.razorfish.fluent.autotag.cloudvision.AutoTextWorkflowStep"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node1>
         <node2
@@ -32,7 +32,7 @@
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                PROCESS="com.razorfish.fluent.autotag.AutoLabelWorkflowStep"
+                PROCESS="com.razorfish.fluent.autotag.cloudvision.AutoLabelWorkflowStep"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node2>
         <node3
@@ -41,7 +41,7 @@
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                PROCESS="com.razorfish.fluent.autotag.AutoLandMarkWorkflowStep"
+                PROCESS="com.razorfish.fluent.autotag.cloudvision.AutoLandMarkWorkflowStep"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node3>
         <node4
