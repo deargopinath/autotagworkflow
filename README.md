@@ -41,7 +41,9 @@ First setup access to the [IBM Bluemix AlchemyAPI](http://www.ibm.com/cloud-comp
 Once you retrieve your credentials, set the following environment variable.
 
 
+    ```bash
     export IBM_API_KEY=<api_key>
+    ```
 
     
 * Start your AEM instance in this environment.
