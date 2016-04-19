@@ -1,4 +1,4 @@
-Adobe AEM auto tagging with Autotagging AEM Assets with Image Recognition APIs
+Autotagging AEM Assets with Image Recognition APIs
 ========
 
 Google Cloud Vision
