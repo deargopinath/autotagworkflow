@@ -1,4 +1,4 @@
-package com.razorfish.fluent.autotag;
+package com.razorfish.fluent.autotag.cloudvision;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +10,6 @@ import org.apache.felix.scr.annotations.Service;
 import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;
 import org.apache.felix.scr.annotations.Reference;
-import javax.jcr.Node;
 import org.osgi.framework.Constants;
 
 import com.day.cq.dam.api.Asset;
@@ -33,14 +32,14 @@ import com.google.api.services.vision.v1.model.Feature;
 import com.google.api.services.vision.v1.model.Image;
 import com.google.common.collect.ImmutableList;
 
-//This is a component so it can provide or consume services
 @Component
 
 @Service
 
-@Properties({ @Property(name = Constants.SERVICE_DESCRIPTION, value = "Automatic Landmark detection and tagging."),
+@Properties({
+		@Property(name = Constants.SERVICE_DESCRIPTION, value = "GC Landmark - Automatic Landmark detection and tagging."),
 		@Property(name = Constants.SERVICE_VENDOR, value = "Razorfish"),
-		@Property(name = "process.label", value = "Automatic Landmark detection and tagging") })
+		@Property(name = "process.label", value = "GC Landmark - Automatic Landmark detection and tagging") })
 public class AutoLandMarkWorkflowStep extends AbstractCloudVisionWorkflowStep {
 
 	/** Default log. */
@@ -48,14 +47,15 @@ public class AutoLandMarkWorkflowStep extends AbstractCloudVisionWorkflowStep {
 
 	private static final String NAMESPACE = "/etc/tags/cloudvision";
 	private static final String CONTAINER = "/landmark";
-	private static final int MAX_LABELS = 3;
+	private static final int MAX_LABELS = 10;
 	@Reference
 	JcrTagManagerFactory tmf;
 
 	public void execute(WorkItem workItem, WorkflowSession wfSession, MetaDataMap args) throws WorkflowException {
 
 		try {
-			log.info("AutoLandMarkWorkflow - execute method"); // ensure that the
+			log.info("AutoLandMarkWorkflow - execute method"); // ensure that
+																// the
 																// execute
 																// method is
 																// invoked
@@ -64,10 +64,10 @@ public class AutoLandMarkWorkflowStep extends AbstractCloudVisionWorkflowStep {
 			// create tag manager
 			log.info("AutoLandMarkWorkflow - create tag manager");
 			TagManager tagManager = tmf.getTagManager(wfSession.getSession());
-			Tag superTag = tagManager.resolve(NAMESPACE+CONTAINER);
+			Tag superTag = tagManager.resolve(NAMESPACE + CONTAINER);
 			Tag tag = null;
 			if (superTag == null) {
-				tag = tagManager.createTag(NAMESPACE+CONTAINER, "landmark", "autodetected landmark", true);
+				tag = tagManager.createTag(NAMESPACE + CONTAINER, "landmark", "autodetected landmark", true);
 				log.info("Tag Name Space created : ", tag.getPath());
 			} else {
 				tag = superTag;
@@ -75,7 +75,6 @@ public class AutoLandMarkWorkflowStep extends AbstractCloudVisionWorkflowStep {
 
 			byte[] data = new byte[(int) asset.getOriginal().getSize()];
 			asset.getOriginal().getStream().read(data);
-
 
 			// Google Cloudvision code
 			AnnotateImageRequest request = new AnnotateImageRequest().setImage(new Image().encodeContent(data))
@@ -95,9 +94,8 @@ public class AutoLandMarkWorkflowStep extends AbstractCloudVisionWorkflowStep {
 
 			if (landmarks != null) {
 
-
 				String[] tagArray = createTags(tagManager, landmarks, NAMESPACE, CONTAINER);
-				
+
 				addMetaData(workItem, wfSession, asset, tagManager, tagArray);
 			} else {
 				log.info("No landmarks found");
@@ -111,4 +109,4 @@ public class AutoLandMarkWorkflowStep extends AbstractCloudVisionWorkflowStep {
 		}
 	}
 
-	}
+}
