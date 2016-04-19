@@ -1,6 +1,8 @@
-Adobe AEM auto tagging with Google Cloud Vision
+Autotagging AEM Assets with Image Recognition APIs
 ========
 
+Google Cloud Vision
+------------------
 Sample project using [Google Cloud Vision API](https://cloud.google.com/vision/docs/)  to autotag assets within Adobe AEM DAM. 
 
 It contains a workflow with 3 process steps:
@@ -31,6 +33,32 @@ To run the application, first setup the Cloud Vision API.
 * Start your AEM instance in this environment.
 * Start the AutoTag workflow and select an asset.
   ![workflow start](screenshot2.png)
+
+IBM Watson
+----------
+First setup access to the [IBM Bluemix AlchemyAPI](http://www.ibm.com/cloud-computing/bluemix/)
+
+Once you retrieve your credentials, set the following environment variable.
+
+
+    export IBM_API_KEY=<api_key>
+
+    
+* Start your AEM instance in this environment.
+* Modify the AutoTag workflow to use the Bluemix process steps and select an asset.
+
+Microsoft Cognitive Services
+----------
+First setup access to the [Microsoft Cognitive Services Vision API](https://www.microsoft.com/cognitive-services/en-us/computer-vision-api)
+
+Once you retrieve your credentials, set the following environment variable.
+
+    export MSFT_API_KEY_FACE=<face_api_key>
+    export MSFT_API_KEY_VISION=<vision_api_key>
+    
+    
+* Start your AEM instance in this environment.
+* Modify the AutoTag workflow to use the Microsoft process steps and select an asset.
 
 Building
 --------
