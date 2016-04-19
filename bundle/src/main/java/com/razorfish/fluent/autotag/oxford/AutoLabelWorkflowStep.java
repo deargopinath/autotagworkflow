@@ -27,9 +27,9 @@ import com.day.cq.tagging.TagManager;
 @Service
 
 @Properties({
-		@Property(name = Constants.SERVICE_DESCRIPTION, value = "MSFT label - Automatic label detection and tagging using msft oxford."),
+		@Property(name = Constants.SERVICE_DESCRIPTION, value = "Microsoft label - Automatic label detection and tagging using Microsoft Cognitive Services."),
 		@Property(name = Constants.SERVICE_VENDOR, value = "Razorfish"),
-		@Property(name = "process.label", value = "MSFT label - Automatic label detection and tagging using msft oxford") })
+		@Property(name = "process.label", value = "Microsoft label - Automatic label detection and tagging using Microsoft Cognitive Services") })
 public class AutoLabelWorkflowStep extends AbstractOxfordWorkflowStep {
 
 	/** Default log. */
