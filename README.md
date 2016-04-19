@@ -34,6 +34,26 @@ To run the application, first setup the Cloud Vision API.
 * Start the AutoTag workflow and select an asset.
   ![workflow start](screenshot2.png)
 
+IBM Watson
+----------
+First setup access to the [IBM Bluemix AlchemyAPI](http://www.ibm.com/cloud-computing/bluemix/)
+Once you retrieve your credentials, set the following environment variable.
+   ```bash
+    export IBM_API_KEY=<api_key>
+    ```
+* Start your AEM instance in this environment.
+* Modify the AutoTag workflow to use the Bluemix process steps and select an asset.
+
+Microsoft Cognitive Services
+----------
+First setup access to the [Microsoft Cognitive Services Vision API](https://www.microsoft.com/cognitive-services/en-us/computer-vision-api)
+Once you retrieve your credentials, set the following environment variable.
+   ```bash
+    export MSFT_API_KEY_FACE=<face_api_key>
+    export MSFT_API_KEY_VISION=<vision_api_key>
+    ```
+* Start your AEM instance in this environment.
+* Modify the AutoTag workflow to use the Microsoft process steps and select an asset.
 
 Building
 --------
