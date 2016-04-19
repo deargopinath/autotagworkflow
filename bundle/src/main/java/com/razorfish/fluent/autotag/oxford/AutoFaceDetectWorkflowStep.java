@@ -28,9 +28,9 @@ import com.day.cq.tagging.TagManager;
 @Service
 
 @Properties({
-		@Property(name = Constants.SERVICE_DESCRIPTION, value = "Oxford face - Automatic face detection and tagging using bluemix."),
+		@Property(name = Constants.SERVICE_DESCRIPTION, value = "Microsoft face - Automatic face detection and tagging using Microsoft Cognitive Services."),
 		@Property(name = Constants.SERVICE_VENDOR, value = "Razorfish"),
-		@Property(name = "process.face", value = "Oxford face - Automatic face detection and tagging using MSFT oxford") })
+		@Property(name = "process.face", value = "Microsoft face - Automatic face detection and tagging using Microsoft Cognitive Services ") })
 public class AutoFaceDetectWorkflowStep extends AbstractOxfordWorkflowStep {
 
 	/** Default log. */
