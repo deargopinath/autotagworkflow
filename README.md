@@ -1,6 +1,11 @@
 Autotagging AEM Assets with Image Recognition APIs
 ========
 
+
+Corresponding writeup:
+    [How machine learning can transform digital assset management](https://www.linkedin.com/pulse/how-machine-learning-can-transform-digital-asset-ii-martin-jacobs)
+
+
 Google Cloud Vision
 ------------------
 Sample project using [Google Cloud Vision API](https://cloud.google.com/vision/docs/)  to autotag assets within Adobe AEM DAM. 
